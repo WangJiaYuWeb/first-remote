@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+
+
+    <title>about</title>
+
+    <link rel="stylesheet" href="./static/css/normalize.css">
+    <link rel="stylesheet" href="./css/index.css">
+
+    <script type="text/javascript" src="./static/js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="./static/js/jquery.lazyload.min.js"></script>
+    <script type="text/javascript" src="./static/js/html5shiv.min.js"></script>
+
+    <script>
+        var browserCompatibility = true;
+        function myBrowser(){
+            var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串
+            var isOpera = userAgent.indexOf("Opera") > -1; //判断是否Opera浏览器
+            var isIE = userAgent.indexOf("compatible") > -1 && userAgent.indexOf("MSIE") > -1 && !isOpera; //判断是否IE浏览器
+            var isFF = userAgent.indexOf("Firefox") > -1; //判断是否Firefox浏览器
+            var isSafari = userAgent.indexOf("Safari") > -1; //判断是否Safari浏览器
+            var isChrome = userAgent.indexOf("Chrome") > -1; //判断是否Chrome浏览器
+            if (isIE) {
+                var IE5 = IE55 = IE6 = IE7 = IE8 = false;
+                var reIE = new RegExp("MSIE (\\d+\\.\\d+);");
+                reIE.test(userAgent);
+                var fIEVersion = parseFloat(RegExp["$1"]);
+                IE55 = fIEVersion == 5.5;
+                IE6 = fIEVersion == 6.0;
+                IE7 = fIEVersion == 7.0;
+                IE8 = fIEVersion == 8.0;
+                if (IE55) {
+                    return "IE55";
+                }
+                if (IE6) {
+                    return "IE6";
+                }
+                if (IE7) {
+                    return "IE7";
+                }
+                if (IE8) {
+                    return "IE8";
+                }
+            }//isIE end
+            if (isFF) {
+                return "FF";
+            }
+            if (isOpera) {
+                return "Opera";
+            }
+            if (isSafari){
+                if(isChrome){
+                    return "Chrome";
+                }else{
+                    return "Safari";
+                }
+            }
+        }//myBrowser() end
+        //以下是调用上面的函数
+        if (myBrowser() == "IE55" || myBrowser() == "IE6" || myBrowser() == "IE7" || myBrowser() == "IE8") {
+            alert("请使用IE9以上版本或使用浏览器极速模式浏览（推荐使用Chrome 36+ 、FireFox 16+ 、Opera 23+ 、IE 9+、Safari 9+版本或其它浏览器的急速模式浏览）");
+            browserCompatibility = false;
+        }
+    </script>
+
+
+    <script type="text/javascript" src="./js/app.js"></script>
+</head>
+<body>
+    <header class="fixed_top about_nav">
+        <ul class="nav_list">
+            <li class="nav_item">
+                <div class="nav_item_content">
+                    <span></span>
+                    <img src="./img/about_logo.png" alt="锦华管家">
+                </div>
+            </li>
+            <li class="nav_item nav_btn_box">
+                <div class="nav_item_content nav_btn_item">
+                    <span></span>
+                    <img src="./img/about_nav_index.png" alt="首页">
+                </div>
+            </li>
+            <li class="nav_item nav_btn_box">
+                <div class="nav_item_content nav_btn_item">
+                    <span></span>
+                    <img src="./img/about_nav_sales.png" alt="套餐购买">
+                </div>
+            </li>
+            <li class="nav_item nav_btn_box">
+                <div class="nav_item_content nav_btn_item">
+                    <span></span>
+                    <img src="./img/about_nav_guide.png" alt="消费攻略">
+                </div>
+            </li>
+            <li class="nav_item nav_btn_box">
+                <div class="nav_item_content nav_btn_item">
+                    <span></span>
+                    <img src="./img/about_nav_about.png" alt="关于管家">
+                </div>
+            </li>
+            <li class="nav_item nav_btn_box">
+                <div class="nav_item_content nav_btn_item">
+                    <span></span>
+                    <img src="./img/about_nav_contact.png" alt="联系管家">
+                </div>
+            </li>
+        </ul>
+    </header>
+
+    <section class="content_section">
+        <div class="content_box">
+            <img src="./img/about_content1.png" alt="内容页1">
+        </div>
+    </section>
+
+</body>
+</html>
